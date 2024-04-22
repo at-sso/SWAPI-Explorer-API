@@ -1,0 +1,2 @@
+# SWAPI Explorer API
+ 

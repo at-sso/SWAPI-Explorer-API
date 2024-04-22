@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Developer Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": [
+        "-defaultsInit",
+        "-configDev",
+        "-GLEGoodLooking",
+      ],
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false,
+    },
+    {
+      "name": "User Experience Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": [
+        "-defaultsInit",
+        "-configUsr",
+        "-loggerNoTb",
+        "-GLEGoodLooking",
+      ],
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Workflow Test",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": [
+        "-isWorkflow",
+        "-defaultsInit",
+        "-configUsr",
+      ],
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false
+    }
+  ]
+}
