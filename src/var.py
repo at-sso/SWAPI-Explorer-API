@@ -38,8 +38,8 @@ def _random64() -> float:
 
 
 class __Var:
-    extra_message: str = "Good looking!"
-    limit: float = _random64()
+    global_str: str = "Good looking!"
+    global_limit: float = _random64()
 
 
 var = __Var

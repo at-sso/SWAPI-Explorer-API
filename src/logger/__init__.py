@@ -35,12 +35,15 @@ class __Logger:
             files: List[str] = _os.listdir(self.__log_path)
             if not len(files) < 10:
                 logger_amount: int = max((len(files)) // 10, 1)
-                files_to_delete: List[str] = files[: len(self.__log_path) - logger_amount]
+                files_to_delete: List[str] = files[
+                    : len(self.__log_path) - logger_amount
+                ]
                 for file_name in files_to_delete:
                     file_path: str = _os.path.join(self.__log_path, file_name)
                     _os.remove(file_path)
         except:
             pass
+
         # Create a file handler
         logger_handler = _logging.FileHandler(self.__log_file, mode="w")
 
@@ -53,50 +56,50 @@ class __Logger:
         # Add the handler to the logger
         self.__logger.addHandler(logger_handler)
 
-    def debug(self, message: str):
+    def debug(self, message: Any) -> None:
         """
         The function `debug` logs a debug message using a logger message handler.
 
-        @param message The `message` parameter in the `debug` method is a string that represents the
+        @param message The `message` parameter in the `debug` method is an object that represents the
         message to be logged at the 'DEBUG' level.
         """
-        self.__logger.debug(message)
+        self.__logger.debug(str(message))
 
-    def info(self, message: str) -> None:
+    def info(self, message: Any) -> None:
         """
         This function logs an informational message using a logger message handler.
 
-        @param message The `message` parameter in the `info` method is a string that represents the
+        @param message The `message` parameter in the `info` method is an object that represents the
         message to be logged at the 'INFO' level.
         """
-        self.__logger.info(message)
+        self.__logger.info(str(message))
 
-    def warning(self, message: str) -> None:
+    def warning(self, message: Any) -> None:
         """
         The `warning` function logs a warning message using a logger message handler.
 
-        @param message The `message` parameter in the `info` warning is a string that represents the
+        @param message The `message` parameter in the `info` warning is an object that represents the
         message to be logged at the 'WARNING' level.
         """
-        self.__logger.warning(message)
+        self.__logger.warning(str(message))
 
-    def error(self, message: str) -> None:
+    def error(self, message: Any) -> None:
         """
         The function `error` logs an error message using a logger message handler.
 
-        @param message The `message` parameter in the `error` method is a string that represents the
+        @param message The `message` parameter in the `error` method is an object that represents the
         message to be logged at the 'ERROR' level.
         """
-        self.__logger.error(message)
+        self.__logger.error(str(message))
 
-    def critical(self, message: str) -> None:
+    def critical(self, message: Any) -> None:
         """
         This function logs a critical message using a logger message handler.
 
-        @param message The `message` parameter in the `critical` method is a string that represents the
+        @param message The `message` parameter in the `critical` method is an object that represents the
         message to be logged at the 'CRITICAL' level.
         """
-        self.__logger.critical(message)
+        self.__logger.critical(str(message))
 
 
 logger = __Logger()
@@ -119,7 +122,7 @@ class __LoggerSpecials:
             "crit": lambda arg: logger.critical(arg),
         }
 
-    def __handle_logger_message(self, key: str, message: str) -> None:
+    def __handle_logger_message(self, key: str, message: Any) -> None:
         """
         This function handles logging of error messages at different levels based on a specified key.
 

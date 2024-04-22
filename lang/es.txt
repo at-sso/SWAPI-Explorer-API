@@ -1,0 +1,8 @@
+a) ¿En cuántas películas aparecen planetas cuyo clima sea árido?
+- El número de películas con planetas áridos es: <ans.1>.
+
+b) ¿Cuántos Wookies aparecen en toda la saga?
+- El número de Wookies en toda la saga es: <ans.2>.
+
+c) ¿Cuál es el nombre de la aeronave más pequeña en la primera película?
+- El nombre de la aeronave más pequeña en la primera película es: <ans.3>.

@@ -10,7 +10,7 @@
   "python.analysis.diagnosticSeverityOverrides": {
     "reportUnknownMemberType": "information",
     "reportMissingTypeStubs": "information",
-    "reportReturnType": "information",
+    "reportReturnType": false,
     "reportUnusedExcept": "information",
     "reportUnknownVariableType": "information",
     "reportUnusedClass": "information",
@@ -20,7 +20,7 @@
     "reportUnknownArgumentType": "warning",
     "reportUnknownLambdaType": "warning",
     "reportUnusedFunction": "warning",
-    "reportUnusedVariable": "warning",
+    "reportUnusedVariable": false,
     "reportUnusedExpression": "warning",
     "reportPossiblyUnboundVariable": "warning",
     "reportInvalidTypeVarUse": "error",
@@ -30,6 +30,7 @@
     "reportPropertyTypeMismatch": "error",
     "reportDuplicateImport": "error",
     "reportUninitializedInstanceVariable": "error",
+    "reportCallIssue": false
   },
   "python.analysis.ignore": [
     "**/tests/**"

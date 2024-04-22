@@ -1,0 +1,8 @@
+a) In how many movies do planets with arid climates appear?
+- The number of movies with arid planets is: <ans.1>.
+
+b) How many Wookies appear throughout the saga?
+- The number of Wookies in the entire saga is: <ans.2>.
+
+c) What is the name of the smallest spacecraft in the first movie?
+- The name of the smallest spacecraft in the first movie is: <ans.3>.

@@ -1,11 +1,4 @@
-__all__ = [
-    "ABSOLUTE_PATH",
-    "JSON_PATH",
-    "JSON_FILE",
-    "LOGGER_PATH",
-    "LOGGER_FILE",
-    "SHARED_FILE",
-]
+__all__ = ["ABSOLUTE_PATH", "LOGGER_PATH", "LOGGER_FILE", "SHARED_FILE", "LANG_PATH"]
 
 import os as os
 import sys as sys
@@ -35,15 +28,11 @@ def __mkdirs(*paths: str) -> List[Any]:
 
 
 ABSOLUTE_PATH: str = os.path.abspath(os.path.dirname(sys.argv[0])).replace("\\", "/")
-JSON_PATH: str = f"{ABSOLUTE_PATH}/json"
-JSON_FILE: str = f"{JSON_PATH}/budget_data.json"
 LOGGER_PATH: str = f"{ABSOLUTE_PATH}/log"
 LOGGER_FILE: str = f"{LOGGER_PATH}/{dt.now().strftime('%Y-%m-%d-%H-%M-%S')}.log"
 SHARED_FILE: str = f"{ABSOLUTE_PATH}/src/bin/random64" + (
     ".dll" if os.name == "nt" else ".so"
 )
+LANG_PATH: str = f"{ABSOLUTE_PATH}/lang"
 
-__mkdirs(
-    JSON_PATH,
-    LOGGER_PATH,
-)
+__mkdirs(LOGGER_PATH)
