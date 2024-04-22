@@ -33,7 +33,7 @@ The script will print the following information to the console:
 
 **License:**
 
-This project is licensed under the GNU License - see the [license](license) file for details.
+This project is licensed under the MIT License - see the [license](license) file for details.
 
 **Further Development:**
 
