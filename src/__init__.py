@@ -33,18 +33,11 @@ def main() -> int:
     logger.info("Main function started.")
     logger_specials.was_called(__name__, main.__name__)
 
-    # Initialize the global language string variable based on the current language setting.
-    if lang == "null":
-        raise ValueError("")
-
-    if lang == "en":
-        var.global_str = load_file(f"{LANG_PATH}/en.txt")["content"]
-    else:
-        var.global_str = load_file(f"{LANG_PATH}/es.txt")["content"]
+    var.global_str = str(lang_values.get(lang, "null")())  # type: ignore[operator]
 
     logger_specials.value_was_set("var.global_str", f"\n{var.global_str}\n")
 
-    # Perform a GET request to fetch the list of planets.
+    # Perform a GET request to fetch the lists.
     api_planet_response: ResponseType = __get_request(f"{SWAPI}/planets")
     api_planet_data: Any = api_planet_response.json()
     api_starships_response: ResponseType = __get_request(f"{SWAPI}/starships")
@@ -108,8 +101,7 @@ def main() -> int:
 
     # Set the global string variable by replacing placeholders with provided answers.
     var.global_str = (
-        var.global_str. \
-        replace("<ans.1>", str(arid_films_values))
+        var.global_str.replace("<ans.1>", str(arid_films_values))
         .replace("<ans.2>", str(wookie_count))
         .replace("<ans.3>", str(smallest_starship_name))
     )

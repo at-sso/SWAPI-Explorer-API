@@ -1,11 +1,23 @@
-__all__ = ["lang"]
+__all__ = ["lang", "lang_values"]
 
 import argparse
 from argparse import (
     Namespace,
 )
+from typing import Callable, Dict
 
-lang: str = "null"
+from src.file_handler import *
+from src.const import *
+
+
+def __lang_file_handler(filename: str = "", force_ex: bool = False) -> str:
+    if force_ex:
+        raise ValueError(
+            "Language setting is not specified or is set to 'null'."
+            "Please provide a valid language setting."
+            f"Global lang: {lang}"
+        )
+    return load_file(f"{LANG_PATH}/{filename}.txt")["content"]
 
 
 def __parse_args() -> Namespace:
@@ -32,6 +44,13 @@ def __parse_args() -> Namespace:
 
 
 __args: Namespace = __parse_args()
+
+lang: str = "null"
+lang_values: Dict[str, Callable[[], str]] = {
+    "en": lambda: __lang_file_handler("en"),
+    "es": lambda: __lang_file_handler("es"),
+    "null": lambda: __lang_file_handler(force_ex=True),
+}
 
 # If both values weren't set, the 'EN' mode is loaded by default.
 if not (__args.EN or __args.ES):
