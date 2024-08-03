@@ -1,26 +1,13 @@
-*
-!/**/
-!*.*
-!**/test.*
-**/todo.*
-!requirements.txt
-!Dockerfile
-!license
-**/.vs/**
-**/.vscode/*.*
-**/c_cpp_properties.json
-!**/launch.json
-!**/settings.json
-!**/*licenses/**
-!*.md
-*.db
-*.exe
-**/todo/**
-**/test/**
+# IDE folders:
+.vs
+.vscode
+.idea
+
+# Needed VSCode files:
+!*./launch.json
+
+# Log or cache folders
 __pycache__
 .pytest_cache
-!menus/**
-bin/**
-!bin/src**
-!bin/tests**
-log/**
+**/cache/**
+*.log

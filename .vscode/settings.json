@@ -38,38 +38,4 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.quickSuggestions": {
-      "strings": true,
-      "other": "on"
-    },
-    "editor.suggest.insertMode": "replace"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.quickSuggestions": {
-      "strings": true,
-      "comments": "on",
-      "other": "on"
-    },
-    "editor.suggest.insertMode": "replace"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.suggest.insertMode": "replace"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.maxTokenizationLineLength": 2500
-  },
-  "files.associations": {
-    "*.json5": "jsonc",
-    "*.ini": "ini",
-    "*.log": "log",
-    "*.html": "html",
-    "*.js": "javascript"
-  },
 }
